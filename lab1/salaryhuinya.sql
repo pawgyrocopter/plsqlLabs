@@ -9,7 +9,7 @@ BEGIN
         RAISE NegativeArgumentException;    
     END IF;
     
-    IF (ROUND(bonus) != bonus) OR (ROUND(salary) != salary)  
+    IF FLOOR(bonus) <> CEILING(bonus) OR FLOOR(salary) <> CEILING(salary)  
     THEN
         RAISE FloatArgumentException;
     END IF;
