@@ -5,10 +5,10 @@ BEGIN
     SELECT COUNT(id) INTO isExist FROM MyTable WHERE id = insertionId;
     
     IF isExist = 1 THEN
-         return ('id=' || TO_CHAR(new_id) || 
+         return ('id=' || TO_CHAR(insertionId) || 
                     ' is already exist in MyTable');
     ELSE    
-        result := 'INSERT INTO MyTable VALUES(' || TO_CHAR(new_id) || ', someValue' ');';
+        result := 'INSERT INTO MyTable VALUES(' || TO_CHAR(insertionId) || ', someValue' ');';
     END IF;
     
     RETURN result;
